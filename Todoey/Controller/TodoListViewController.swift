@@ -55,6 +55,9 @@ class TodoListViewController: UITableViewController {
         
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
+        // to Update data with properties/field
+        // itemArray[indexPath.row].setValue("Update", forKey: "title")
+        
         self.saveItems()
         
         tableView.deselectRow(at: indexPath, animated: true)
