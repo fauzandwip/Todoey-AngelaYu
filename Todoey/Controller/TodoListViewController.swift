@@ -53,6 +53,11 @@ class TodoListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //        let cell = UITableViewCell(style: .default, reuseIdentifier: "TodoItemCell")
         
+        // to Delete data with properties/field title
+        //context.delete(itemArray[indexPath.row])
+        // remove data in the array to be loaded
+        //itemArray.remove(at: indexPath.row)
+        
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
         // to Update data with properties/field
