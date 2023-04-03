@@ -70,6 +70,9 @@ class TodoListViewController: UITableViewController {
         
     }
     
+    
+    // MARK: - Add New Items
+    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
         
@@ -96,6 +99,9 @@ class TodoListViewController: UITableViewController {
         present(alert, animated: true)
     }
     
+    
+    // MARK: - CRUD Methods
+    
     func saveItems() {
         
         do {
@@ -118,6 +124,9 @@ class TodoListViewController: UITableViewController {
         tableView.reloadData()
     }
 }
+
+
+// MARK: - UISearchBarDelegate
 
 extension TodoListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
