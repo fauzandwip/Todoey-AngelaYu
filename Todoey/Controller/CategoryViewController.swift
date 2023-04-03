@@ -18,18 +18,6 @@ class CategoryViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let newCategory = Category()
-//        newCategory.name = "Tools"
-//        categoryArray.append(newCategory)
-//
-//        let newCategory2 = Category()
-//        newCategory2.name = "Shopping"
-//        categoryArray.append(newCategory2)
-//
-//        let newCategory3 = Category()
-//        newCategory3.name = "Work"
-//        categoryArray.append(newCategory3)
-        
         loadCategories()
     }
 
@@ -57,6 +45,18 @@ class CategoryViewController: UITableViewController {
     
     
     // MARK: - TableView Delegate Methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToItems", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! TodoListViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedCategory = categoryArray[indexPath.row]
+        }
+    }
     
 
     // MARK: - Add New Categories
